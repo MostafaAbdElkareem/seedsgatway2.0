@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+  overflow-x: hidden; /* needed because hiding the menu on the right side is not perfect,  */
+}
+.color-change-2x {
+  -webkit-animation: color-change-2x 2s linear infinite alternate both;
+  animation: color-change-2x 2s linear infinite alternate both;
+}
+
+@-webkit-keyframes color-change-2x {
+  0% {
+    background: #c4ffff67;
+  }
+  100% {
+    background: #e8ffd977;
+  }
+}
+@keyframes color-change-2x {
+  0% {
+    background: #ffffff77;
+  }
+  100% {
+    background: #b0bad13b;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: tomato;
+}
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 75px;
+  right: 10px;
+  z-index: 100;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  color: #fff;
+  user-select: none;
+  font-size: 30px;
+  .search-input {
+    width: 452px;
+    padding: 10px;
+    opacity: 1;
+    height: 25px;
+    margin: 4px;
+    position: relative;
+  }
+
+  .frame-link {
+    background: #4dad55;
+    padding: 10px 13px;
+    border-radius: 59px;
+  }
+}
+#menuToggle input {
+  display: block;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+#menu {
+  position: fixed;
+  width: 500px;
+  margin: 0;
+  padding: 0px;
+  top: 65px;
+  right: 0px;
+  border-radius: 0;
+  height: 90.8vh;
+  border: 10px solid #e9e7e7;
+  border-right: 86px solid #e9e7e7;
+  overflow: auto;
+  background: #e9e7e7;
+  box-shadow: 0 3px 24px #b0c5d0, 0 3px 2px #bec9da33;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  z-index: -1;
+  transform: translate(100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menuToggle input:checked ~ ul {
+  transform: scale(1, 1);
+  opacity: 1;
+}
+/* page structure */
+.droppable {
+  border-top: 1px dotted #cccccc3b;
+  height: 93.1vh;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../src/assets/images/green.jpg);
+  .grid {
+    margin: 10px;
+    width: 100%;
+    min-height: 150px;
+  }
+  .page-title {
+    color: #5d7492;
+    padding: 3px 18px;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 15px 0;
+  }
+}

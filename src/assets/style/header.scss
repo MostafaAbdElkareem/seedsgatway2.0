@@ -1,0 +1,18 @@
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #1b759e !important;
+}
+.nav-btn {
+  margin: 0 30px;
+  .MuiButton-root {
+    margin: 2px 6px;
+    background: #a1e2ce6e;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2),
+      0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 1px -2px rgba(0, 0, 0, 0.12);
+  }
+  .MuiSvgIcon-root {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+  }
+}

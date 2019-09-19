@@ -1,0 +1,158 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#container {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+    background-image: url(../img/icons_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#dock-wrapper {
+    display: inline-block;
+    position: relative;
+    /* aby sa odtiaľto rátala absolútna pozícia */
+    top: 60px;
+    opacity: 0.7;
+    border-radius: 60px;
+    /*     background: #dceee4bf; */
+    padding: 9px 13%;
+    /* margin-bottom: -30px; */
+    transition: top ease 0.7s;
+}
+
+h2 {
+    color: #fff;
+    text-align: left;
+    position: relative;
+    padding: 10px 0 0 25px;
+}
+
+#dock-wrapper:hover {
+    opacity: 1;
+    top: 20px;
+}
+
+#dock-left {
+    width: 30px;
+    height: 75px;
+    /* aby sme videli len ľavy koniec */
+    position: absolute;
+    /* aby som dostal ľavy okraj pred ikonky */
+    left: 0;
+    bottom: 0;
+}
+
+body {
+    font-family: "lato";
+    font-size: 16px;
+}
+
+#dock {
+    float: left;
+    /* musí plávať, aby sa nám zarovnalo s #dock-left */
+    list-style: none;
+    /* margin: 0 0 0 26%; */
+    height: 80px;
+    padding: 0 10px 0 0;
+}
+
+#dock li {
+    float: left;
+    cursor: pointer;
+    position: relative;
+    top: 4px;
+    background: #fff;
+    padding: 20px 15px;
+    border-radius: 45px;
+    margin: 0 3px;
+}
+
+li.transparent {
+    background: transparent !important;
+    padding: 30px 5px!important;
+}
+
+li.transparent:hover {
+    transform: none !important;
+    -webkit-transform: none!important;
+    -moz-transform: none!important;
+    -ms-transform: none!important;
+}
+
+li.transparent img {
+    width: 28px!important;
+}
+
+#dock li a {
+    display: block;
+    /* bez tohoto nefunguje transition */
+    transition: 0.15s linear;
+    /*trvanie animácie a funkcia */
+    -webkit-transition: 0.15s linear;
+    -moz-transition: 0.15s linear;
+    transition-property: transform, margin;
+    /*vlastnosti, ktoré sa budú meniť */
+    -webkit-transition-property: -webkit-transform, margin;
+    -moz-transition-property: -moz-transform, margin;
+    margin: 0 5px;
+    /* -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.45, transparent), to(rgba(255, 255, 255, 0.25))); */
+    text-decoration: none;
+}
+
+#dock li a img {
+    border: 0;
+    width: 32px;
+    margin: 0;
+}
+
+#dock li:hover a {
+    transform-origin: center bottom;
+    -webkit-transform-origin: center bottom;
+    -moz-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    margin: 0 10px;
+}
+
+#dock li .title {
+    display: none;
+    /* titulok nie je viditeľný */
+    position: absolute;
+    /* musíme ho vyňať z toku elementov, aby nezaberal miesto */
+    bottom: 90px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    /* zakrivenie rohov */
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+#dock li:hover .title {
+    display: block;
+    /* zobrazí sa po prejdení myšou */
+    left: 50%;
+    /* do polovice rodicovskeho elementu */
+    transform: translate(-50%);
+    /* posunutie o 50% vlastnej velkosti */
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+}
+
+.active {
+    background: #afd4ddd0!important;
+}
