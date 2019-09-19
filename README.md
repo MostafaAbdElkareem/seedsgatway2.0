@@ -2,8 +2,9 @@
 
 ## Available Scripts
 
-- install node on you machine
-- Exctract the folder
+- install node on you machinefrom the URL {https://nodejs.org/en/download/}
+
+- download and Exctract the folder
 - run npm install from the folder path
 - run npm start
 
