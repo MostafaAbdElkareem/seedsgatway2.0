@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="./dock.css" />
+    <script src="./jquery-3.3.1.min.js"></script>
+    <title>app name</title>
+  </head>
+  <body
+    style="margin: 0; background-image: url(img/lab.jpg); background-size: cover"
+  >
+    <div id="container">
+      <div id="dock-wrapper">
+        <div id="dock-left"></div>
+        <ul id="dock">
+          <li class="transparent">
+            <a href="#" title="Define Design">
+              <img src="img/prev.svg" alt="Define Design" />
+            </a>
+          </li>
+          <li class="active">
+            <span class="title">Define Design</span>
+            <a href="#" title="Define Design">
+              <img src="img/define_design.svg" alt="Define Design" />
+            </a>
+          </li>
+          <li>
+            <span class="title">Manage Materials</span>
+            <a href="#" title="Manage Materials">
+              <img src="img/materials.svg" alt="Manage Materials" />
+            </a>
+          </li>
+          <li>
+            <span class="title">Define Activities</span>
+            <a href="#" title="Define Activities">
+              <img src="img/definde_act.svg" alt="Define Activities" />
+            </a>
+          </li>
+          <li>
+            <span class="title">Define Treatments</span>
+            <a href="#" title="Define Treatments">
+              <img src="img/treatment.svg" alt="Define Treatments" />
+            </a>
+          </li>
+          <li>
+            <span class="title">Define Assessments</span>
+            <a href="#" title="Define Assessments">
+              <img src="img/tracking.svg" alt="Define Assessments" />
+            </a>
+          </li>
+          <li class="transparent">
+            <a href="#" title="Define Design">
+              <img src="img/next.svg" alt="Define Design" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        var titleTxt = $("#appName");
+        $("ul li").on("click", function() {
+          var iconTxt = $(this)
+            .children("a")
+            .attr("title");
+          $(".active").removeClass("active");
+          $(this).addClass("active");
+          $("#newPage")
+            .fadeOut()
+            .delay(1000)
+            .fadeIn();
+          titleTxt.text(iconTxt);
+          $("#appName2").text(iconTxt);
+        });
+      });
+    </script>
+  </body>
+</html>

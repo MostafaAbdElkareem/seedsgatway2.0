@@ -161,6 +161,28 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <HomeIcon />
+          <p>Home</p>
+        </IconButton>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <MatIcon />
+          <p> Training Materials</p>
+        </IconButton>
+      </MenuItem>
     </Menu>
   );
 
@@ -207,9 +229,9 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              {/*   <Badge badgeContent={4} color="secondary">
                 <MailIcon />
-              </Badge>
+              </Badge> */}
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">

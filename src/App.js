@@ -113,7 +113,13 @@ export default class DraggableCards extends Component {
             onDragOver={e => this.onDragOver(e)}
             onDrop={e => this.onDrop(e, "complete")}
           >
-            <h3 className="page-title">My Bookmarks</h3>
+            <h3 className="page-title">
+              My Shortcuts{" "}
+              <span class="note">
+                | Start adding shortcuts to your homepage by clicking the plus
+                (+) icon on the top right
+              </span>
+            </h3>
             <div className="grid">{status.complete}</div>
           </div>
         </div>{" "}
