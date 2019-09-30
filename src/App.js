@@ -9,7 +9,8 @@ export default class DraggableCards extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ""
+      search: "",
+      appCards: cardsData
     };
   }
   updateSearch(event) {
@@ -25,31 +26,41 @@ export default class DraggableCards extends Component {
 
   onDrop = (ev, cat) => {
     let id = ev.dataTransfer.getData("id");
-    let status = cardsData.filter(st => {
+    let status = this.state.appCards.filter(st => {
       if (st.id == id) {
         st.category = cat;
       }
       return st;
     });
     this.setState({
-      ...cardsData,
+      ...this.state.appCards,
       status
     });
+    console.log(this.state.appCards);
   };
-
+  ChangeCat(id) {
+    if (this.state.appCards[id].category == "complete") {
+      this.setState(state => ((state.appCards[id].category = "wip"), state));
+    } else {
+      this.setState(
+        state => ((state.appCards[id].category = "complete"), state)
+      );
+    }
+  }
   render() {
     var status = {
       wip: [],
       complete: []
     };
+    console.log(this.state);
     /* app holder  */
-    const Apps = cardsData.map(appInfo => (
+    const Apps = this.state.appCards.map(appInfo => (
       <AppHolder appInfo={appInfo}></AppHolder>
     ));
     /*  */
-    let searchedCards = cardsData.filter(_card => {
-      console.log(this.state.search);
-      console.log(cardsData);
+    let searchedCards = this.state.appCards.filter(_card => {
+      //console.log(this.state.search);
+      //console.log(cardsData);
       return (
         _card.cardName.toLowerCase().indexOf(this.state.search) !== -1 ||
         _card.description.toLowerCase().indexOf(this.state.search) !== -1
@@ -66,7 +77,10 @@ export default class DraggableCards extends Component {
               draggable
               className="draggable "
             >
-              <Card cardinfo={card}></Card>
+              <Card
+                cardinfo={card}
+                category={() => this.ChangeCat(card.id)}
+              ></Card>
             </div>
           </div>
         </React.Fragment>

@@ -134,13 +134,26 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      {" "}
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          color="inherit"
+        >
+          <HomeIcon />
         </IconButton>
-        <p>Messages</p>
+        <p>Home</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          color="inherit"
+        >
+          <MatIcon />
+        </IconButton>
+        <p>Training Materials</p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
@@ -160,28 +173,6 @@ export default function PrimarySearchAppBar() {
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <HomeIcon />
-          <p>Home</p>
-        </IconButton>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <MatIcon />
-          <p> Training Materials</p>
-        </IconButton>
       </MenuItem>
     </Menu>
   );
@@ -206,28 +197,14 @@ export default function PrimarySearchAppBar() {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <div className={classes.grow} />{" "}
-          <div className="nav-btn">
-            <Button
-              variant="contained"
-              color="primary"
-              size="small"
-              className={classes.button}
-            >
-              Home
-              <HomeIcon className={classes.rightIcon} />
-            </Button>
-            <Button
-              size="small"
-              variant="contained"
-              color="primary"
-              className={classes.button}
-            >
-              Training Materials
-              <MatIcon className={classes.rightIcon} />
-            </Button>
-          </div>
+          <div className={classes.grow} /> <div className="nav-btn"></div>
           <div className={classes.sectionDesktop}>
+            <Button className={(classes.button, "nav-btn")}>
+              <HomeIcon className={classes.rightIcon} /> Home
+            </Button>
+            <Button className={(classes.button, "nav-btn")}>
+              <MatIcon className={classes.rightIcon} /> Training Materials
+            </Button>
             <IconButton aria-label="show 4 new mails" color="inherit">
               {/*   <Badge badgeContent={4} color="secondary">
                 <MailIcon />

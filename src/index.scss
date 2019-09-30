@@ -44,6 +44,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  min-width: 226px;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
   -webkit-flex-direction: column;
@@ -75,6 +76,13 @@
 
   .grid__item {
     padding: 0;
+    width: 48%;
+    float: left;
+  }
+  #menu {
+    width: 266px;
+    border-right: 36px solid #e9e7e7;
+    border: 10px solid #e9e7e7;
   }
 }
 @media screen and (min-width: 900px) {
@@ -87,10 +95,14 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-
+  #menu {
+    width: 500px;
+    border: 10px solid #e9e7e7;
+    border-right: 86px solid #e9e7e7;
+  }
   /* 2 columns */
   .grid__item {
-    width: 48%;
+    width: 23.5%;
     border: none;
   }
 
@@ -111,15 +123,10 @@
 @media screen and (min-width: 1200px) {
   /* 3 columns */
   .grid__item {
-    width: 33.333%;
+    width: 23.8%;
   }
 }
-@media screen and (min-width: 1500px) {
-  /* 4 columns */
-  .grid__item {
-    width: 25%;
-  }
-}
+
 @media screen and (min-width: 1800px) {
   /* 5 columns */
   .grid__item {
@@ -404,4 +411,15 @@ h1 {
   width: 10px;
 
   z-index: -1;
+}
+
+.droppable {
+  .to-panel {
+    display: none;
+  }
+}
+#menu {
+  .to-page {
+    display: none;
+  }
 }

@@ -46,8 +46,12 @@ class Card extends Component {
         });
       });
   }
+  categoryChange(id) {
+    this.props.category(id);
+  }
   render() {
     let thisCard = this.props.cardinfo;
+
     return (
       <div className="cardStyle card">
         <div className="wrapper">
@@ -76,7 +80,17 @@ class Card extends Component {
                 ></a>
               </li>
               <li>
-                <a href="#home" className="fa fa-plus "></a>
+                {" "}
+                <a
+                  href="#home"
+                  className="fa fa-plus to-panel"
+                  onClick={() => this.categoryChange(thisCard.id)}
+                ></a>
+                <a
+                  href="#home"
+                  className="fa fa-trash to-page"
+                  onClick={() => this.categoryChange(thisCard.id)}
+                ></a>
               </li>
               <li>
                 <a href="#" className="fa fa-comment">
