@@ -4,6 +4,7 @@ import AppHolder from "./componenets/AppHolder";
 import Header from "./componenets/Header";
 import cardsData from "./data/cardData.json";
 import "./App.scss";
+import "../src/assets/style/themes.scss";
 
 export default class DraggableCards extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class DraggableCards extends Component {
     };
   }
   updateSearch(event) {
+    console.log(event.target.value);
     this.setState({ search: event.target.value.substr(0, 20) });
   }
   onDragStart = (ev, id) => {
@@ -52,7 +54,7 @@ export default class DraggableCards extends Component {
       wip: [],
       complete: []
     };
-    console.log(this.state);
+    // console.log(this.state);
     /* app holder  */
     const Apps = this.state.appCards.map(appInfo => (
       <AppHolder appInfo={appInfo}></AppHolder>
@@ -63,7 +65,8 @@ export default class DraggableCards extends Component {
       //console.log(cardsData);
       return (
         _card.cardName.toLowerCase().indexOf(this.state.search) !== -1 ||
-        _card.description.toLowerCase().indexOf(this.state.search) !== -1
+        _card.description.toLowerCase().indexOf(this.state.search) !== -1 ||
+        _card.appCategory.toLowerCase().indexOf(this.state.search) !== -1
       );
     });
     /*  */
@@ -104,6 +107,8 @@ export default class DraggableCards extends Component {
                       type="text"
                       value={(this, this.state.search)}
                       className="search-input"
+                      name="focus"
+                      required
                       placeholder="Type to search Apps"
                       onChange={this.updateSearch.bind(this)}
                     />
@@ -133,6 +138,18 @@ export default class DraggableCards extends Component {
                 | Start adding shortcuts to your homepage by clicking the plus
                 (+) icon on the top right
               </span>
+              <div className="filter">
+                <select
+                  className="filter-dropDown"
+                  onChange={this.updateSearch.bind(this)}
+                >
+                  <option value="">Filter By Category</option>
+                  <option value="cat-01">Cat-01</option>
+                  <option value="cat-02">Cat-02</option>
+                  <option value="cat-03">Cat-03</option>
+                  <option value="cat-04">Cat-04</option>
+                </select>
+              </div>
             </h3>
             <div className="grid">{status.complete}</div>
           </div>

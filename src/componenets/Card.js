@@ -53,7 +53,7 @@ class Card extends Component {
     let thisCard = this.props.cardinfo;
 
     return (
-      <div className="cardStyle card">
+      <div className={`cardStyle ${thisCard.appCategory} card`}>
         <div className="wrapper">
           <img
             src={require(`../assets/images/${thisCard.icon}.svg`)}
@@ -68,7 +68,7 @@ class Card extends Component {
               <h1 className="title">
                 <a href="#">{thisCard.cardName}</a>
               </h1>{" "}
-              <span className="author">{thisCard.owner}</span>
+              <span className="author">{thisCard.appCategory}</span>
             </div>
 
             <ul className="menu-content container">

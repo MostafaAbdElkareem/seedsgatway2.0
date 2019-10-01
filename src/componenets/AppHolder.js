@@ -65,8 +65,12 @@ class AppHolder extends Component {
               </nav>
 
               <section className="react-draggable-content">
-                {" "}
                 <div className="app-info">
+                  <div>
+                    <span className="date">Last visit : {appInfo.date}</span>
+                    {/*    <span className="owner">Owner : {appInfo.owner}</span> */}
+                    <span className="clear"></span>
+                  </div>
                   <div className="app-logo">
                     <img
                       src={require(`../assets/images/${appInfo.icon}.svg`)}
@@ -74,11 +78,6 @@ class AppHolder extends Component {
                     />
                   </div>
                   <h4>{appInfo.cardName}</h4>
-                  <div>
-                    <span className="date">Last visit : {appInfo.date}</span>
-                    <span className="owner">Owner : {appInfo.owner}</span>
-                    <span className="clear"></span>
-                  </div>
                   <div>
                     <h5>Actions on this application</h5>
                     <div className="action-container">
@@ -94,7 +93,7 @@ class AppHolder extends Component {
                     <div>
                       <input
                         placeholder="Type title here"
-                        type="text"
+                        type="search"
                         className="input"
                       />
                     </div>

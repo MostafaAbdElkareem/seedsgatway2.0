@@ -4,7 +4,7 @@
     "cardName": "Manage Reproduction Actions ",
     "icon": "results",
     "category": "complete",
-
+    "appCategory": "cat-01",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "02.htm",
     "owner": "tom lee",
@@ -27,6 +27,7 @@
     "cardName": "Define Design",
     "icon": "define_design",
     "category": "wip",
+    "appCategory": "cat-02",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "02.htm",
     "owner": "tom lee",
@@ -49,7 +50,7 @@
     "cardName": "Manage Materials",
     "icon": "materials",
     "category": "complete",
-
+    "appCategory": "cat-03",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "03.htm",
     "owner": "tom lee",
@@ -72,7 +73,7 @@
     "cardName": "Define Activities",
     "icon": "definde_act",
     "category": "wip",
-
+    "appCategory": "cat-01",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -95,7 +96,7 @@
     "cardName": "Define Treatments",
     "icon": "treatment",
     "category": "wip",
-
+    "appCategory": "cat-03",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -118,7 +119,7 @@
     "cardName": "Define Assessments",
     "icon": "analisys",
     "category": "wip",
-
+    "appCategory": "cat-04",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -141,7 +142,7 @@
     "cardName": "Define Location Conditions",
     "icon": "location",
     "category": "wip",
-
+    "appCategory": "cat-04",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -164,7 +165,7 @@
     "cardName": "Map Fields and Plots  ",
     "icon": "field_map",
     "category": "wip",
-
+    "appCategory": "cat-02",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -187,7 +188,7 @@
     "cardName": "Capture Data  ",
     "icon": "dashboard",
     "category": "wip",
-
+    "appCategory": "cat-02",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -210,7 +211,7 @@
     "cardName": "Product Placement",
     "icon": "genoPlan",
     "category": "wip",
-
+    "appCategory": "cat-03",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -233,7 +234,7 @@
     "cardName": "Product Advancement",
     "icon": "advance",
     "category": "wip",
-
+    "appCategory": "cat-03",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -256,7 +257,7 @@
     "cardName": "Progeny Selection ",
     "icon": "materials",
     "category": "wip",
-
+    "appCategory": "cat-04",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -279,7 +280,7 @@
     "cardName": "Reporting and KPI",
     "icon": "reports",
     "category": "wip",
-
+    "appCategory": "cat-02",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -302,7 +303,7 @@
     "cardName": "Create Trials",
     "icon": "tracking",
     "category": "wip",
-
+    "appCategory": "cat-01",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
@@ -325,7 +326,7 @@
     "cardName": "Manage Action Plans",
     "icon": "manage_plan",
     "category": "wip",
-
+    "appCategory": "cat-02",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec cursus turpis. Ut condimentum nisl quis ex posuere, eget sodales purus porttitor. Etiam mollis, metus in mollis ornare",
     "cardURL": "define_design.htm",
     "owner": "tom lee",
