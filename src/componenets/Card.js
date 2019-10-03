@@ -66,7 +66,7 @@ class Card extends Component {
           <div className="data">
             <div className="content">
               <h1 className="title">
-                <a href="#">{thisCard.cardName}</a>
+                <a>{thisCard.cardName}</a>
               </h1>{" "}
               <span className="author">{thisCard.appCategory}</span>
             </div>
@@ -74,7 +74,6 @@ class Card extends Component {
             <ul className="menu-content container">
               <li>
                 <a
-                  href="#"
                   className="fa fa-link md-trigger"
                   data-modal={`modal-${thisCard.id}`}
                 ></a>
@@ -82,18 +81,17 @@ class Card extends Component {
               <li>
                 {" "}
                 <a
-                  href="#home"
                   className="fa fa-plus to-panel"
                   onClick={() => this.categoryChange(thisCard.id)}
                 ></a>
                 <a
-                  href="#home"
                   className="fa fa-trash to-page"
                   onClick={() => this.categoryChange(thisCard.id)}
                 ></a>
+                <a className="fa fa-info to-category"></a>
               </li>
               <li>
-                <a href="#" className="fa fa-comment">
+                <a className="fa fa-comment">
                   <span>{thisCard.commentCounter}</span>
                 </a>
               </li>

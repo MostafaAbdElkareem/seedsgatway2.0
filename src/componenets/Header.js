@@ -9,16 +9,15 @@ import Badge from "@material-ui/core/Badge";
 import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
+import GroupIcon from "@material-ui/icons/ViewList";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import "../assets/style/header.scss";
-import Icon from "@material-ui/core/Icon";
 import HomeIcon from "@material-ui/icons/Home";
 import MatIcon from "@material-ui/icons/Description";
+import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -141,9 +140,23 @@ export default function PrimarySearchAppBar() {
           aria-controls="primary-search-account-menu"
           color="inherit"
         >
+          <GroupIcon />
+        </IconButton>
+        <p>
+          <NavLink to="/category">Apps by Category</NavLink>
+        </p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          color="inherit"
+        >
           <HomeIcon />
         </IconButton>
-        <p>Home</p>
+        <p>
+          <NavLink to="/">Home</NavLink>
+        </p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -153,7 +166,9 @@ export default function PrimarySearchAppBar() {
         >
           <MatIcon />
         </IconButton>
-        <p>Training Materials</p>
+        <p>
+          <NavLink to="/material">Training Materials</NavLink>
+        </p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
@@ -200,10 +215,17 @@ export default function PrimarySearchAppBar() {
           <div className={classes.grow} /> <div className="nav-btn"></div>
           <div className={classes.sectionDesktop}>
             <Button className={(classes.button, "nav-btn")}>
-              <HomeIcon className={classes.rightIcon} /> Home
+              <HomeIcon className={classes.rightIcon} />{" "}
+              <NavLink to="/">Home</NavLink>
             </Button>
             <Button className={(classes.button, "nav-btn")}>
-              <MatIcon className={classes.rightIcon} /> Training Materials
+              <GroupIcon className={classes.rightIcon} />{" "}
+              <NavLink to="/category">Apps by Category</NavLink>
+            </Button>
+
+            <Button className={(classes.button, "nav-btn")}>
+              <MatIcon className={classes.rightIcon} />{" "}
+              <NavLink to="/material">Training Materials</NavLink>
             </Button>
             <IconButton aria-label="show 4 new mails" color="inherit">
               {/*   <Badge badgeContent={4} color="secondary">

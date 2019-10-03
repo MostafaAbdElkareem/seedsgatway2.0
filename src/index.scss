@@ -396,11 +396,19 @@ h1 {
 }
 
 .droppable {
-  .to-panel {
+  .to-panel,
+  .to-category {
     display: none;
   }
 }
 #menu {
+  .to-page,
+  .to-category {
+    display: none;
+  }
+}
+.by-category {
+  .to-panel,
   .to-page {
     display: none;
   }
@@ -412,5 +420,14 @@ h1 {
     padding: 8px 50px 8px 10px;
     color: #666;
     border: 1px solid #cccccc;
+  }
+}
+.group-title {
+  width: 100%;
+  clear: both;
+  h2 {
+    color: #2a2e2f;
+    font-weight: 400;
+    font-size: 17px;
   }
 }
