@@ -3,7 +3,7 @@ import Card from "../componenets/Card";
 import AppHolder from "../componenets/AppHolder";
 import cardsData from "../data/cardData.json";
 import SimpleStorage from "react-simple-storage";
-
+import OpenedApps from "../componenets/OpenedApps";
 export default class Category extends Component {
   constructor(props) {
     super(props);
@@ -74,6 +74,7 @@ export default class Category extends Component {
             <div className="grid">{status.complete}</div>
           </div>
         </div>{" "}
+        <OpenedApps></OpenedApps>
       </main>
     );
   }

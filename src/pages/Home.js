@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "../componenets/Card";
+import OpenedApps from "../componenets/OpenedApps";
 import AppHolder from "../componenets/AppHolder";
 import cardsData from "../data/cardData.json";
 import SimpleStorage from "react-simple-storage";
@@ -151,6 +152,7 @@ export default class Home extends Component {
             <div className="grid">{status.complete}</div>
           </div>
         </div>{" "}
+        <OpenedApps></OpenedApps>
       </main>
     );
   }

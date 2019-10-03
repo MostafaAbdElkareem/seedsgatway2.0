@@ -9,7 +9,7 @@ class Card extends Component {
 
   componentDidMount() {
     var overlay = document.querySelector(".md-overlay");
-
+    var bodyA = document.querySelector("body");
     [].slice
       .call(document.querySelectorAll(".md-trigger"))
       .forEach(function(el, i) {
@@ -18,6 +18,7 @@ class Card extends Component {
 
         function removeModal(hasPerspective) {
           classie.remove(modal, "md-show");
+          classie.remove(bodyA, "bd-show");
 
           if (hasPerspective) {
             classie.remove(document.documentElement, "md-perspective");
@@ -30,6 +31,7 @@ class Card extends Component {
 
         el.addEventListener("click", function(ev) {
           classie.add(modal, "md-show");
+          classie.add(bodyA, "bd-show");
           overlay.removeEventListener("click", removeModalHandler);
           overlay.addEventListener("click", removeModalHandler);
 
@@ -88,7 +90,7 @@ class Card extends Component {
                   className="fa fa-trash to-page"
                   onClick={() => this.categoryChange(thisCard.id)}
                 ></a>
-                <a className="fa fa-info to-category"></a>
+                <a className="fa fa-info-circle to-category"></a>
               </li>
               <li>
                 <a className="fa fa-comment">

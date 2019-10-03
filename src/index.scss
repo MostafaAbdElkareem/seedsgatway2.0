@@ -412,6 +412,9 @@ h1 {
   .to-page {
     display: none;
   }
+  .to-category {
+    display: block;
+  }
 }
 .filter {
   display: inline-block;
@@ -426,8 +429,12 @@ h1 {
   width: 100%;
   clear: both;
   h2 {
-    color: #2a2e2f;
-    font-weight: 400;
+    color: #256272;
+    font-weight: 700;
+    text-transform: capitalize;
     font-size: 17px;
   }
+}
+.bd-show {
+  overflow: hidden;
 }

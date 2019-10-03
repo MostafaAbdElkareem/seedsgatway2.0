@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Category from "./pages/Category";
 import NoPage from "./pages/NoPage";
 import "./App.scss";
-import "../src/assets/style/themes.scss";
+import "./assets/style/themes.scss";
 const comp = () => {
   return <div>compoenent</div>;
 };
