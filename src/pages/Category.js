@@ -23,13 +23,7 @@ export default class Category extends Component {
       <AppHolder appInfo={appInfo}></AppHolder>
     ));
     /*  */
-    let searchedCards = this.state.appCards.filter(_card => {
-      return (
-        _card.cardName.toLowerCase().indexOf(this.state.search) !== -1 ||
-        _card.description.toLowerCase().indexOf(this.state.search) !== -1 ||
-        _card.appCategory.toLowerCase().indexOf(this.state.search) !== -1
-      );
-    });
+    let searchedCards = this.state.appCards;
     const groupBy = (array, key) => {
       return array.reduce((result, currentValue) => {
         (result[currentValue[key]] = result[currentValue[key]] || []).push(
@@ -40,16 +34,21 @@ export default class Category extends Component {
     };
 
     const cardsByCategory = groupBy(searchedCards, "appCategory");
-
+    let hideGroupTitle;
+    hideGroupTitle = "group-title show";
     Object.keys(cardsByCategory).map(function(catKey) {
       let groupTitle = (
-        <div className="group-title">
+        <div className={hideGroupTitle}>
           <h2>{catKey}</h2>
         </div>
       );
-      status["complete"].push(groupTitle);
-      cardsByCategory[catKey].forEach(card => {
-        if ((card.appCategory = catKey)) {
+
+      // status["complete"].push(groupTitle);
+      cardsByCategory[catKey].map(function(card) {
+        if (card.appCategory === catKey) {
+          if (status[card.category].indexOf(groupTitle) === -1) {
+            status[card.category].push(groupTitle);
+          }
           status[card.category].push(
             <React.Fragment>
               <div className="grid__item">
@@ -73,7 +72,7 @@ export default class Category extends Component {
             <h3 className="page-title">Apps Grouped by Category</h3>
             <div className="grid">{status.complete}</div>
           </div>
-        </div>{" "}
+        </div>
         <OpenedApps></OpenedApps>
       </main>
     );
