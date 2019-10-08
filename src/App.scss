@@ -127,3 +127,20 @@ a:hover {
 .wip {
   min-height: 150px;
 }
+#hide-grid,
+#hide-msg {
+  display: none;
+}
+#show-grid,
+#show-msg {
+  display: block;
+}
+.clear-all {
+  background: #369;
+  color: #fff;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  margin: 0 5px;
+  cursor: pointer;
+}

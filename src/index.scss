@@ -201,7 +201,9 @@ h1 {
   transform: translateY(0);
 }
 .note {
-  font-size: 12px;
+  font-size: 15px;
+  padding: 2% 33%;
+  text-align: center;
 }
 .card .data {
   position: absolute;
@@ -214,12 +216,12 @@ h1 {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 .card .data .content {
-  padding: 5px 0 60px 0;
+  padding: 0px 0 60px 0;
   position: relative;
   z-index: 1;
 }
 .card .author {
-  font-size: 12px;
+  font-size: 11px;
   display: inline-block;
   text-align: left;
   color: #666;
@@ -228,6 +230,9 @@ h1 {
   margin: 0 0 5px 0;
   font-size: 15px;
   font-weight: 500;
+  min-height: 40px;
+  padding: 8px 0;
+  background: #cccccc50;
 }
 .card .text {
   height: 70px;

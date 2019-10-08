@@ -3,7 +3,7 @@ import Card from "../componenets/Card";
 import OpenedApps from "../componenets/OpenedApps";
 import AppHolder from "../componenets/AppHolder";
 import cardsData from "../data/cardData.json";
-import SimpleStorage from "react-simple-storage";
+import SimpleStorage, { resetParentState } from "react-simple-storage";
 
 export default class Home extends Component {
   constructor(props) {
@@ -12,9 +12,10 @@ export default class Home extends Component {
       search: "",
       appCards: cardsData
     };
+    this.initialState = this.state;
   }
   updateSearch(event) {
-    this.setState({ search: event.target.value.substr(0, 20) });
+    this.setState({ search: event.target.value.substr(0, 60) });
   }
   onDragStart = (ev, id) => {
     ev.dataTransfer.setData("id", id);
@@ -47,11 +48,15 @@ export default class Home extends Component {
       );
     }
   }
+  componentWillUnmount() {
+    console.log("done");
+  }
   render() {
     var status = {
       wip: [],
       complete: []
     };
+
     // console.log(this.state);
     /* app holder  */
     const Apps = this.state.appCards.map(appInfo => (
@@ -67,8 +72,16 @@ export default class Home extends Component {
         _card.appCategory.toLowerCase().indexOf(this.state.search) !== -1
       );
     });
-    /*  */
+    /*  */ let showGrid,
+      showMsg = "";
     searchedCards.forEach(card => {
+      if (Object.keys(status.complete).length == 0) {
+        showGrid = "hide-grid";
+        showMsg = "show-msg";
+      } else {
+        showGrid = "show-grid";
+        showMsg = "hide-msg";
+      }
       status[card.category].push(
         <React.Fragment>
           <div className="grid__item">
@@ -132,24 +145,44 @@ export default class Home extends Component {
           >
             <h3 className="page-title">
               My Shortcuts{" "}
-              <span class="note">
-                | Start adding shortcuts to your homepage by clicking the plus
-                (+) icon on the top right
-              </span>
               <div className="filter">
                 <select
                   className="filter-dropDown"
                   onChange={this.updateSearch.bind(this)}
                 >
                   <option value="">Filter By Category</option>
-                  <option value="cat-01">Cat-01</option>
-                  <option value="cat-02">Cat-02</option>
-                  <option value="cat-03">Cat-03</option>
-                  <option value="cat-04">Cat-04</option>
+                  <option value="planting location/field management">
+                    Planting Location/Field Management
+                  </option>
+                  <option value="breeding and decision making">
+                    Breeding and Decision Making
+                  </option>
+                  <option value="material inventory / quantity management">
+                    Material Inventory / Quantity Management
+                  </option>
+                  <option value=" material identity and genealogy management">
+                    Material Identity and genealogy Management
+                  </option>
+                  <option value="experiment execution">
+                    Experiment Execution
+                  </option>
                 </select>
+                <button
+                  className="clear-all"
+                  onClick={() => resetParentState(this, this.initialState)}
+                >
+                  Clear All my Shortcuts
+                </button>
               </div>
             </h3>
-            <div className="grid">{status.complete}</div>
+            <span className="note" id={showMsg}>
+              Start adding shortcuts to your Homepage by clicking the plus (+)
+              icon on the top right and drag cards or click ( + ) in the card
+              actions
+            </span>
+            <div className="grid" id={showGrid}>
+              {status.complete}
+            </div>
           </div>
         </div>{" "}
         <OpenedApps></OpenedApps>
